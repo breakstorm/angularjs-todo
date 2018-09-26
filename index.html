@@ -12,18 +12,22 @@
 <body ng-app="todo" ng-controller="todoCtrl">
   <h1>hello world</h1>
   <h2>{{name}}</h2>
+  <todo-list></todo-list>
+  <!-- <div> {{ list }} </div> -->
+  <div ng-repeat="item in list"> {{ item }} </div>
   <section>
     <form action="">
       <input type="text">
-      <button>submit</button>
+      <input type="button" value="submit">
       <ul>
-        <li>
+        <li ng-repeat="item in list">
           <span>
-            done
-            <input type="checkbox">
+            <label for="">Done</label>
+            <input id="itemDone" type="checkbox" ng-checked="item.done" ng-click="doneItem($index)">
           </span>
-          <button>delete</button>
-          <input type="text">
+          <input type="button" value="delete" ng-click="deleteItem($index)">
+          <label for="">{{$index}}</label>
+          <input type="text" ng-value="item.content" ng-model="item.content">
         </li>
       </ul>
     </form>
