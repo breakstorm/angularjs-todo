@@ -7,6 +7,19 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="index.css">
   <title>AngularJS ToDoList</title>
+  <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAZwzHzQpWH_LiP4XMCJNZBf7gUbudKsVE",
+      authDomain: "api-test-1207.firebaseapp.com",
+      databaseURL: "https://api-test-1207.firebaseio.com",
+      projectId: "api-test-1207",
+      storageBucket: "api-test-1207.appspot.com",
+      messagingSenderId: "1001206726809"
+    };
+    firebase.initializeApp(config);
+  </script>
 </head>
 
 <body ng-app="todo" ng-controller="todoCtrl">
