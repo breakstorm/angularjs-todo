@@ -40,6 +40,17 @@
       $window.console.log('done done');
     };
 
+    $scope.createItem = function () {
+      const newValue = $window.document.querySelector('.create-item').value;
+      const newItem = {
+        'id': $scope.list.length + 1,
+        'content': newValue,
+        'done': false
+      }
+      $scope.list.push(newItem);
+      $window.console.log('create done', newItem);
+    }
+
   });
 
   app.component('todoList', {

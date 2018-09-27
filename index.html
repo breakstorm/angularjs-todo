@@ -30,8 +30,8 @@
   <div ng-repeat="item in list"> {{ item }} </div>
   <section>
     <form action="">
-      <input type="text">
-      <input type="button" value="submit">
+      <input type="text" class="create-item">
+      <input type="button" ng-click="createItem()">
       <ul>
         <li ng-repeat="item in list">
           <span>
