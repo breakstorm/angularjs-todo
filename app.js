@@ -4,24 +4,26 @@
 (function () {
   var app = angular.module('todo', []);
 
-  app.controller('todoCtrl', function ($window, $scope) {
+  app.controller('todoCtrl', function ($window, $scope, todoStorage) {
+    $window.console.log(todoStorage.get());
     $scope.name = 'what the hell';
-    $scope.list = [{
-        'id': 1,
-        'content': 'hello',
-        'done': false
-      },
-      {
-        'id': 2,
-        'content': 'world',
-        'done': false
-      },
-      {
-        'id': 3,
-        'content': 'angularjs',
-        'done': true
-      },
-    ]
+    $scope.list = todoStorage.get();
+    // $scope.list = [{
+    //     'id': 1,
+    //     'content': 'hello',
+    //     'done': false
+    //   },
+    //   {
+    //     'id': 2,
+    //     'content': 'world',
+    //     'done': false
+    //   },
+    //   {
+    //     'id': 3,
+    //     'content': 'angularjs',
+    //     'done': true
+    //   },
+    // ]
 
     $scope.deleteItem = function (index) {
       // $scope.list[index].done = !$scope.list[index].done;
