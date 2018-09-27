@@ -25,6 +25,10 @@
       $window.console.log('create done');
     }
 
+    $scope.updateItem = function (newValue, index) {
+      $scope.list = todoStorage.update(newValue, index);
+      $window.console.log('update done', newValue, index);
+    };
   });
 
   app.component('todoList', {

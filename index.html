@@ -40,7 +40,7 @@
           </span>
           <input type="button" value="delete" ng-click="deleteItem($index)">
           <label for="">{{$index}}</label>
-          <input type="text" ng-value="item.content" ng-model="item.content">
+          <input type="text" ng-value="item.content" ng-model="item.content" ng-change="updateItem(item.content, $index)">
         </li>
       </ul>
     </form>
